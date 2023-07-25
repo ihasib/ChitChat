@@ -1,24 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChitChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNW-b6-zsL">
+                                <rect key="frame" x="115.66666666666667" y="368.66666666666669" width="161.66666666666663" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Listen Connection"/>
+                                <connections>
+                                    <segue destination="HDz-dD-CRM" kind="presentation" id="E3K-ue-bhy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGe-MO-oYa">
+                                <rect key="frame" x="113.33333333333333" y="448.66666666666669" width="166.66666666666669" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Create Connection"/>
+                                <connections>
+                                    <segue destination="gvl-wO-Syl" kind="presentation" id="c1M-u7-ofS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aNW-b6-zsL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="2ki-kK-EZk"/>
+                            <constraint firstItem="aNW-b6-zsL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6YY-Hn-4eu"/>
+                            <constraint firstItem="CGe-MO-oYa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHu-Gy-wfH"/>
+                            <constraint firstItem="CGe-MO-oYa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="40" id="VQh-BS-JaG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-127" y="-27"/>
+        </scene>
+        <!--QR View Controller-->
+        <scene sceneID="YOS-yM-5BO">
+            <objects>
+                <viewController id="HDz-dD-CRM" userLabel="QR View Controller" customClass="QrViewController" customModule="ChitChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hzn-F0-kXI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GLU-IS-Hlo">
+                                <rect key="frame" x="28" y="130.00000000000003" width="337" height="336.66666666666674"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GLU-IS-Hlo" secondAttribute="height" id="eBk-KP-gWe"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-33-Fxu">
+                                <rect key="frame" x="65.666666666666686" y="651.66666666666663" width="262" height="140.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A5d-gd-GTW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fWt-33-Fxu" firstAttribute="width" secondItem="Hzn-F0-kXI" secondAttribute="width" multiplier="2:3" id="JBR-c3-Mgs"/>
+                            <constraint firstItem="GLU-IS-Hlo" firstAttribute="top" secondItem="A5d-gd-GTW" secondAttribute="top" constant="130" id="MOM-AG-Ppa"/>
+                            <constraint firstItem="GLU-IS-Hlo" firstAttribute="height" secondItem="Hzn-F0-kXI" secondAttribute="height" multiplier="2:5" id="ayO-N2-DmV"/>
+                            <constraint firstItem="A5d-gd-GTW" firstAttribute="bottom" secondItem="fWt-33-Fxu" secondAttribute="bottom" constant="50" id="azf-3e-TIB"/>
+                            <constraint firstItem="GLU-IS-Hlo" firstAttribute="centerX" secondItem="Hzn-F0-kXI" secondAttribute="centerX" id="h7f-gQ-e4M"/>
+                            <constraint firstItem="fWt-33-Fxu" firstAttribute="centerX" secondItem="Hzn-F0-kXI" secondAttribute="centerX" id="jlb-KV-fPU"/>
+                            <constraint firstItem="fWt-33-Fxu" firstAttribute="height" secondItem="Hzn-F0-kXI" secondAttribute="height" multiplier="1:6" id="xcV-Ij-Jg7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="qrImageView" destination="GLU-IS-Hlo" id="uE5-9U-Luw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHT-Nb-EOE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086.2595419847328" y="-425.35211267605638"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="25c-Dg-kNU">
+            <objects>
+                <viewController id="gvl-wO-Syl" userLabel="Scanner View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lL-nl-flH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3EU-jC-alj">
+                                <rect key="frame" x="56.333333333333343" y="130.00000000000003" width="280.66666666666663" height="280.66666666666674"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3EU-jC-alj" secondAttribute="height" multiplier="1:1" id="SZc-zA-5x1"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bal-t8-0cB">
+                                <rect key="frame" x="65.666666666666686" y="651.66666666666663" width="262" height="140.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gQA-0R-91E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3EU-jC-alj" firstAttribute="centerX" secondItem="3lL-nl-flH" secondAttribute="centerX" id="Aob-Dz-X6U"/>
+                            <constraint firstItem="3EU-jC-alj" firstAttribute="height" secondItem="3lL-nl-flH" secondAttribute="height" multiplier="1:3" id="GvW-Zr-tGc"/>
+                            <constraint firstItem="bal-t8-0cB" firstAttribute="height" secondItem="3lL-nl-flH" secondAttribute="height" multiplier="1:6" id="K2Y-5S-vkT"/>
+                            <constraint firstItem="bal-t8-0cB" firstAttribute="width" secondItem="3lL-nl-flH" secondAttribute="width" multiplier="2:3" id="Ycs-x0-z9h"/>
+                            <constraint firstItem="gQA-0R-91E" firstAttribute="bottom" secondItem="bal-t8-0cB" secondAttribute="bottom" constant="50" id="aZc-e8-Q63"/>
+                            <constraint firstItem="3EU-jC-alj" firstAttribute="top" secondItem="gQA-0R-91E" secondAttribute="top" constant="130" id="fNq-Wi-rUv"/>
+                            <constraint firstItem="bal-t8-0cB" firstAttribute="centerX" secondItem="3lL-nl-flH" secondAttribute="centerX" id="n88-CO-i6N"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Po-dG-lZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
